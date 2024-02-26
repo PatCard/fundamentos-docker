@@ -1,0 +1,47 @@
+docker compose build # Se crea imagen
+
+docker images
+REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
+frontend                  latest    fbc5a780bbd4   15 minutes ago   187MB
+backend                   latest    a48fbe55fa88   15 minutes ago   66.8MB
+patricio34/sitio_web      latest    1d22167bdc79   5 days ago       187MB
+
+docker compose up # Se crea contenedor
+
+docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+e54e920853ca   frontend   "/docker-entrypoint.…"   29 seconds ago   Up 23 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp       clase18-frontend-1
+8fe16e59b09a   backend    "python -m flask run…"   29 seconds ago   Up 26 seconds   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   clase18-backend-1
+
+sudo docker rmi -f a48fbe55fa88
+
+
+docker-compose down # detiene y elimina los contenedores, pero mantendrá los volúmenes.
+docker volume prune # elimina los volúmenes antiguos con docker volume prune. Esto eliminará todos los volúmenes no utilizados.
+
+sudo lsof -i :80 # verifica el uso puerto 80
+
+
+Para eliminar las imágenes con el comando docker-compose down --rmi all. Este comando detendrá los servicios y eliminará los contenedores, las redes y las imágenes utilizadas por los servicios definidos en tu archivo docker-compose.yml.
+
+El flag --rmi all especifica que también deseas eliminar todas las imágenes asociadas con los servicios. Ten en cuenta que esto eliminará las imágenes incluso si están siendo utilizadas por otros contenedores que no están relacionados con tu Compose.
+
+Asegúrate de estar en el mismo directorio que tu archivo docker-compose.yml antes de ejecutar el siguiente comando:
+
+docker-compose down --rmi all
+Este comando limpiará los recursos creados por Docker Compose y eliminará las imágenes asociadas con los servicios.
+
+Ten en cuenta que este enfoque eliminará todas las imágenes utilizadas por los servicios en tu archivo docker-compose.yml. Si deseas eliminar solo imágenes específicas, puedes utilizar el comando docker rmi seguido de los IDs de las imágenes que deseas eliminar.
+
+docker rmi imagen_id1 imagen_id2 ...
+
+
+clase18-backend-1   |  * Running on http://172.29.0.2:5000
+clase18-backend-1   | Press CTRL+C to quit
+clase18-frontend-1  | 2024/01/29 03:53:14 [notice] 8#8: using the "epoll" event method
+clase18-frontend-1  | 2024/01/29 03:53:14 [notice] 8#8: nginx/1.25.3
+
+Para accder de un contenedor a otro (front a back)
+docker exec -it 829f07a3a65d sh
+
+curl --location 'clase18-backend-1:5000/getMyInfo'

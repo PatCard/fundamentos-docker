@@ -1,0 +1,32 @@
+Ejecutar contenededor llamado web de la imagen sitioweb
+docker run -it --rm -d -p 8080:80 --name web sitioweb # se crea contenedor creando enlace entre puertos 8080 y 80
+
+-it : interartivo, si hay algun log o algun elemento interactivo este se mostrara en la terminal.
+--rm: remove, es para eliminar cualquier version previa del contenedor previamente ejecutandose.
+-d : ejecucion en segundo plano.
+-p : puerto, el contenedor se conectara desde el puerto 8080 al 80 del contenedor
+--name: nombre para ubicar al  contenedor en ejecucion. => web
+sitioweb : imagen a ejecutar.
+
+docker exec -it web sh
+
+
+http://127.0.0.1:8080/linktree.html
+
+http://127.0.0.1:8080/ : es el server
+
+linktree.html : ubicacion dentro del directorio /usr/share/nginx/html/
+
+
+En Docker, los contenedores en ejecución pueden ser detenidos, pero eso no los elimina. Para listar todos los contenedores, incluidos los detenidos, puedes usar el siguiente comando:
+docker ps -a
+
+Este comando mostrará todos los contenedores, ya sea que estén en ejecución o detenidos. Si quieres filtrar solo los contenedores que están actualmente en ejecución, puedes usar:
+docker ps
+
+Ahora, si por "persistente" te refieres a contenedores que están configurados para reiniciar automáticamente, entonces deberías buscar contenedores con la opción --restart always. Puedes hacer esto con el siguiente comando:
+docker ps --filter "restart=always"
+
+
+Este comando utiliza la opción -q para mostrar solo los ID de los contenedores, y luego docker rm elimina cada uno de ellos. Esto funcionará tanto para contenedores en ejecución como para contenedores detenidos.
+docker rm $(docker ps -a -q)

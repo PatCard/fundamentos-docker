@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  backend:
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+
+  frontend:
+    image: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/sitio:/usr/share/nginx/html/sitio:rw  # Agregar ":rw" para permisos de lectura/escritura
+    command: /bin/sh -c "chown -R nginx:nginx /usr/share/nginx/html/sitio && nginx -g 'daemon off;'"
+
+# Version inicial
+# version: '3.7'
+
+# services:
+#   backend:
+#     image: backend
+#     build:
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - 5000:5000
+#   frontend:
+#     image: frontend
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - 8080:80
+#     depends_on:
+#       - backend
+

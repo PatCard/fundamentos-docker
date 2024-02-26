@@ -1,0 +1,11 @@
+Se recomienda instalar en VS Code extension Docker Microsoft
+
+Ir a Docker Hub
+
+y bajar servidor web Nginx
+
+Con 
+
+From nginx:latest 
+
+en Dockerfile

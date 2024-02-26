@@ -1,0 +1,54 @@
+Inicie sesión en Docker
+
+docker login -u <nombredeusuario>
+Crear en directorio donde este el Dockerfile (Dockerfile  sitio)
+docker build -t patricio34/sitio_web:latest .
+[+] Building 1.2s (7/7) FINISHED                                                                                                  
+ => [internal] load build definition from Dockerfile                                                                         0.3s
+ => => transferring dockerfile: 122B                                                                                         0.3s
+ => [internal] load .dockerignore                                                                                            0.1s
+ => => transferring context: 2B                                                                                              0.1s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                              0.0s
+ => [1/2] FROM docker.io/library/nginx:latest                                                                                0.2s
+ => [internal] load build context                                                                                            0.2s
+ => => transferring context: 4.30kB                                                                                          0.2s
+ => [2/2] COPY /sitio /usr/share/nginx/html                                                                                  0.3s
+ => exporting to image                                                                                                       0.2s
+ => => exporting layers                                                                                                      0.2s
+ => => writing image sha256:1d22167bdc79cf4b73882efed4105a4667b2d2ce1f579d4d8764ed79f4e24bf2                                 0.0s
+ => => naming to docker.io/patricio34/sitio_web:latest  
+
+docker images
+REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
+patricio34/sitio_web      latest    1d22167bdc79   3 minutes ago   187MB
+nginx                     latest    a0e485b74b12   4 weeks ago     187MB
+sitioweb                  latest    3525335c672b   4 weeks ago     187MB
+
+
+
+Publica una imagen en Docker Hub
+
+docker push <nombre_usuario>/<nombre_imagen>
+
+docker push patricio34/sitio_web:latest
+The push refers to repository [docker.io/patricio34/sitio_web]
+5910da2b3702: Pushed 
+3470e1aa8369: Pushed 
+b074db3b55e1: Mounted from library/nginx 
+e50c68532c4a: Mounted from library/nginx 
+f6ba584ca3ec: Mounted from library/nginx 
+01aaa195cdad: Mounted from library/nginx 
+2a13e6a7cca6: Mounted from library/nginx 
+370869eba6e9: Mounted from library/nginx 
+7292cf786aa8: Mounted from library/nginx 
+latest: digest: sha256:6f0d0684c57d49eb8617dac2c9b3476ea5ecd47c43e83ce057895c7897af596e size: 2198
+
+Buscar una imagen en Hub
+
+docker search <nombre_imagen>
+
+Extraer una imagen de un Docker Hub
+
+docker pull <nombre_imagen>
+docker pull patricio34/sitio_web:latest
+docker run --name patricio_sitio_web --rm -it -p 8080:80 patricio34/sitio_web:latest

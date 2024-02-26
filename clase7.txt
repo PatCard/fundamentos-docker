@@ -1,0 +1,15 @@
+
+crear un Dockerfile
+
+FROM nginx:latest   # obtiene la ultima version
+
+#Path: /usr/local/nginex/html/ COPY /sitio /usr/share/nginx/html #es importante dejar el espacio entre /sitio y usr/... porque son dos argumentos
+
+
+docker build .  # crear imagen aqui en este pwd
+ó
+docker build -t nombre_imagen .  # nginx
+
+docker build -t sitioweb . 
+
+docker rmi -f 036f06604468

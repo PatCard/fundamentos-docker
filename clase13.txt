@@ -1,0 +1,55 @@
+docker run -it --rm -d -p 8080:80 -v ./sitio:/usr/share/nginx/html/sitio --name web nginx
+
+docker inspect web
+
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    },
+
+docker stop web
+
+docker run -it --rm -d -p 127.0.0.1:8080:80 -v ./sitio:/usr/share/nginx/html/sitio --name web nginx
+
+
+docker inspect web
+
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+docker network ls # para explorar
+
+NETWORK ID     NAME             DRIVER    SCOPE
+6c9aeebbe142   17_app_default   bridge    local
+d9e44d2ad9b5   bridge           bridge    local
+de103788eeaf   host             host      local
+db63e2ca9855   none             null      local
+
+docker network create redPrivada # Crea red
+
+docker network ls # para explorar
+
+NETWORK ID     NAME             DRIVER    SCOPE
+6c9aeebbe142   17_app_default   bridge    local
+d9e44d2ad9b5   bridge           bridge    local
+de103788eeaf   host             host      local
+db63e2ca9855   none             null      local
+b45a5474af6f   redPrivada       bridge    local
+
+docker network rm NOMBRE_DE_LA_RED # Para eliminar
+
+
+-p 8080:80 Asigna el puerto 8080 del host Docker al puerto TCP 80 del contenedor.
+
+-p 192.168.1.100:8080:80 Asigna el puerto 8080 en el host Docker IP 192.168.1.100 al puerto TCP 80 en el contenedor.
+
+-p 8080:80/udp Asigna el puerto 8080 del host Docker al puerto UDP 80 del contenedor.
+
+-p 8080:80/tcp -p 8080:80/udp Asigna el puerto TCP 8080 en el host Docker al puerto TCP 80 en el contenedor, y asigna el puerto UDP 8080 en el host Docker al puerto UDP 80 en el contenedor.

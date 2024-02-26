@@ -1,0 +1,30 @@
+Comando para ejecutar la aplicacion en terminal
+python3 -m flask run
+
+conectarse a http://127.0.0.1:5000/getMyInfo
+
+patricio@patricio-ML:~/platzi/Escuela_DevOps_y_CloudComputing/Curso_de_Docker_Fundamentos$ python3 --version
+Python 3.10.12
+
+
+
+Construir la imagen:
+docker build -t myflaskapp .
+
+Ejecutar el contenedor:
+Una vez que la imagen se haya construido, puedes ejecutar un contenedor basado en esa imagen con el siguiente comando:
+
+docker run -p 5000:5000 myflaskapp
+
+Esto mapeará el puerto 5000 del contenedor al puerto 5000 del host. Si tu aplicación Flask está configurada para ejecutarse en otro puerto, ajusta el comando en consecuencia.
+
+Ejecutar el contenedor en segundo plano (en modo detached), agregando la opción -d:
+
+docker run -d -p 5000:5000 myflaskapp
+
+Verificar la ejecución:
+
+Puedes verificar que tu contenedor esté en ejecución utilizando el siguiente comando:
+
+Copy code
+docker ps

@@ -1,0 +1,11 @@
+docker build -t nginx .
+docker run -it --rm -d -p 8080:80 -v ./sitio:/usr/share/nginx/html/sitio --name web nginx
+
+http://localhost:8080/sitio/linktree.html
+
+Para navegar el directorios docker:
+
+docker exec -it web /bin/bash
+
+Una vez dentro del contenedor:
+cd /usr/share/nginx/html/sitio

@@ -1,0 +1,24 @@
+docker -v
+docker --version
+
+docker # documentacion
+
+docker info
+
+sudo docker info # entrega informacion del hardware del sistema
+
+sudo docker images # muestra un listado de imagenes creadas en entorno local
+
+docker ps # muestra listado de contenedores instalados en el entorno local
+
+docker --help # muestra la documentacion
+
+docker images --help ó -h # Documentacion especifica de images
+
+docker build --help
+
+docker run --help
+
+
+
+

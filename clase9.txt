@@ -1,0 +1,18 @@
+Para nombrar una imagen y versionarla
+docker build -t sitioweb22:1.5 .
+
+Busqueda en especifico
+docker images sitioweb
+
+docker images --filter=reference='*:1.0'
+
+Para ver el nimbre de la imagen de forma extendida
+docker images --no-trunc
+
+Para actualizar tag de alguna imagen
+docker image tag sitioweb:latest patricio/sitioweb:latest
+
+Para eliminar una imagen
+docker rmi patricio/sitioweb:latest
+docker rmi -f {IMAGE ID}
+

@@ -1,0 +1,25 @@
+
+docker save patricio34/sitio_web > sitio_web.zip
+
+docker images
+
+patricio34/sitio_web      latest    1d22167bdc79   3 days ago      187MB
+nginx                     latest    a0e485b74b12   5 weeks ago     187MB
+sitioweb                  latest    3525335c672b   5 weeks ago     187MB
+
+docker rmi -f 1d22167bdc79
+
+docker images
+REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
+nginx                     latest    a0e485b74b12   5 weeks ago     187MB
+sitioweb                  latest    3525335c672b   5 weeks ago     187MB
+
+docker load --input sitio_web.zip
+Loaded image: patricio34/sitio_web:latest
+
+docker images
+REPOSITORY                TAG       IMAGE ID       CREATED         SIZE
+patricio34/sitio_web      latest    1d22167bdc79   3 days ago      187MB
+nginx                     latest    a0e485b74b12   5 weeks ago     187MB
+sitioweb                  latest    3525335c672b   5 weeks ago     187MB
+

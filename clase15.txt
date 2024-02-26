@@ -1,0 +1,249 @@
+docker run --name patricio_sitio_web --rm -it -p 8080:80 patricio34/sitio_web:latest
+
+docker run --name patricio_sitio_web --rm -it -p 8080:80 patricio34/sitio_web:latest /bin/bash
+root@ecb62f4be1b1:/# 
+
+docker ps
+CONTAINER ID   IMAGE                         COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+ecb62f4be1b1   patricio34/sitio_web:latest   "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   patricio_sitio_web
+
+root@ecb62f4be1b1:/# ls
+bin   dev                  docker-entrypoint.sh  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  docker-entrypoint.d  etc                   lib   lib64  media   opt  root  sbin  sys  usr
+
+root@patricio-ML:/home/patricio/platzi/Escuela_DevOps_y_CloudComputing/Curso_de_Docker_Fundamentos/clase15# docker run --name patricio_sitio_web --rm -it -p 8080:80 patricio34/sitio_web:latest sh
+# 
+
+docker inspect 9f02271a9082
+[
+    {
+        "Id": "9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8",
+        "Created": "2024-01-14T05:07:41.590071621Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "sh"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 59541,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-01-14T05:07:46.210717102Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:1d22167bdc79cf4b73882efed4105a4667b2d2ce1f579d4d8764ed79f4e24bf2",
+        "ResolvConfPath": "/var/lib/docker/containers/9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8/hostname",
+        "HostsPath": "/var/lib/docker/containers/9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8/hosts",
+        "LogPath": "/var/lib/docker/containers/9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8/9f02271a9082121b603b1c685801fa49e3acea55a93b241aa9a21458943065c8-json.log",
+        "Name": "/patricio_sitio_web",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": true,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                24,
+                110
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/9d2b50d39b7850c8716728ff542c8a42cf5dc8ecff5d9299d2e45fb5e6d8a6d6-init/diff:/var/lib/docker/overlay2/vk1u38136suihc6zrh80qs8y8/diff:/var/lib/docker/overlay2/kbozedkqyebwmmtd5fxyuekab/diff:/var/lib/docker/overlay2/c5bdb6a3d65ed0877e7ed2ebb5f94aa269c30af27bbd4a588a15ea158e1e1171/diff:/var/lib/docker/overlay2/90aa033c3b3bb4fa57d756e8ae21604256ca9e4ec509d7454a850605a588842d/diff:/var/lib/docker/overlay2/ae2dd4fa96300b4fdd2fad0d855e7926c5a7aa733f182b7a1eefc50c391dfea3/diff:/var/lib/docker/overlay2/ef424e891e03235c859562f79227e008787172407791fbdb6295cf4aa03b0187/diff:/var/lib/docker/overlay2/d77deef0a3a7b634f5aab5d9f93fd609530599f77986f6f4827bc096365b285c/diff:/var/lib/docker/overlay2/1d3d03084da4d3603f053da5462a7e6ed1286e226db4bc6b581861ef5cb47480/diff:/var/lib/docker/overlay2/06ca5b79f28eb2f9f5b30c7fc4ea9f20df2b3fdba85e480b8cfa010882b47989/diff",
+                "MergedDir": "/var/lib/docker/overlay2/9d2b50d39b7850c8716728ff542c8a42cf5dc8ecff5d9299d2e45fb5e6d8a6d6/merged",
+                "UpperDir": "/var/lib/docker/overlay2/9d2b50d39b7850c8716728ff542c8a42cf5dc8ecff5d9299d2e45fb5e6d8a6d6/diff",
+                "WorkDir": "/var/lib/docker/overlay2/9d2b50d39b7850c8716728ff542c8a42cf5dc8ecff5d9299d2e45fb5e6d8a6d6/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "9f02271a9082",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.3",
+                "NJS_VERSION=0.8.2",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "sh"
+            ],
+            "Image": "patricio34/sitio_web:latest",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "6513d07ae521589e6f43fca35916d59116c2617584ddca441c214f2ba838e0c3",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/6513d07ae521",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "32026bebdf0c5936665c6b2d269f1915cd9e2cd1b2abd56abd4a8f3b999d3ec5",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "d9e44d2ad9b5c81ecbd864320c9ac91cc296eea8ce1c371809d33a58c7608080",
+                    "EndpointID": "32026bebdf0c5936665c6b2d269f1915cd9e2cd1b2abd56abd4a8f3b999d3ec5",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+
+docker exec -it patricio_sitio_web sh
+# ls
+bin   dev                  docker-entrypoint.sh  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  docker-entrypoint.d  etc                   lib   lib64  media   opt  root  sbin  sys  usr
+# 

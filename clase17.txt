@@ -1,0 +1,8 @@
+Compose es una herramienta para definir y ejecutar aplicaciones Docker multicontenedor. Con Compose, utilizas un archivo YAML para configurar los servicios de tu aplicación. Luego, con un solo comando, creas e inicias todos los servicios a partir de tu configuración.
+
+Compose funciona en todos los entornos; producción, staging, desarrollo, pruebas, así como flujos de trabajo CI. También dispone de comandos para gestionar todo el ciclo de vida de tu aplicación:
+
+Iniciar, detener y reconstruir servicios
+Ver el estado de los servicios en ejecución
+Transmitir la salida de registro de los servicios en ejecución
+Ejecutar un comando puntual en un servicio
